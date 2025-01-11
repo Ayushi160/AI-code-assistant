@@ -4,8 +4,8 @@ import { Button } from "../ui/button";
 
 function Header() {
   return (
-    <div className="flex flex-row justify-between items-center p-2">
-      <span className="font-serif italic text-xl cursor-pointer text-blue-500">
+    <div className="flex flex-row justify-between items-center p-4">
+      <span className="font-serif italic text-xl cursor-pointer text-blue-500" href="/">
         Bolt-Clone
       </span>
       <div className="flex gap-4">
@@ -17,3 +17,7 @@ function Header() {
 }
 
 export default Header;
+
+
+
+
