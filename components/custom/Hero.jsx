@@ -6,11 +6,21 @@ import React, { useContext, useState } from "react";
 import { Textarea } from "../ui/textarea";
 import Colors from "@/data/Colors";
 import { MessagesContext } from "@/context/messagesContext";
+import { UserDetailsContext } from "@/context/UserDetailsContext";
+import SigninDialog from "./SigninDialog";
 
 function Hero() {
   const [userInput, setuserInput] = useState(false);
+  const [openDialog,setOpenDialog] = useState(false);
+
   const {messages,setMessages} = useContext(MessagesContext)
+  const {details,setDetails} = useContext(UserDetailsContext);
+ 
+
   const onGenerate = (input) => {
+    if (!details?.name) {
+      setOpenDialog(true)
+    }
      setMessages({
       role:'user',
       content: input
@@ -60,6 +70,7 @@ function Hero() {
           </h2>
         ))}
       </div>
+      <SigninDialog openDialog={openDialog} closeDialog={(value) => {setOpenDialog(false)}}/>
     </div>
   );
 }
