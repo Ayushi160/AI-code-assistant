@@ -11,21 +11,20 @@ import SigninDialog from "./SigninDialog";
 
 function Hero() {
   const [userInput, setuserInput] = useState(false);
-  const [openDialog,setOpenDialog] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
 
-  const {messages,setMessages} = useContext(MessagesContext)
-  const {details,setDetails} = useContext(UserDetailsContext);
- 
+  const { messages, setMessages } = useContext(MessagesContext);
+  const { details, setDetails } = useContext(UserDetailsContext);
 
   const onGenerate = (input) => {
     if (!details?.name) {
-      setOpenDialog(true)
+      setOpenDialog(true);
     }
-     setMessages({
-      role:'user',
-      content: input
-     })
-  }
+    setMessages({
+      role: "user",
+      content: input,
+    });
+  };
 
   return (
     <div className="flex flex-col items-center mt-24 xl:mt-32 gap-2">
@@ -47,10 +46,11 @@ function Hero() {
           />
           {userInput && (
             <ArrowRight
-            onClick={() => {
-              onGenerate(userInput)
-            }}
-            className="bg-blue-500 hover:bg-gray-700 rounded-sm p-1 h-8 w-8 cursor-pointer" />
+              onClick={() => {
+                onGenerate(userInput);
+              }}
+              className="bg-blue-500 hover:bg-gray-700 rounded-sm p-1 h-8 w-8 cursor-pointer"
+            />
           )}
         </div>
         <div>
@@ -60,9 +60,9 @@ function Hero() {
       <div className="flex flex-wrap max-w-2xl justify-center gap-2">
         {Lookup.SUGGSTIONS.map((item, index) => (
           <h2
-          onClick={() => {
-            onGenerate(item)
-          }}
+            onClick={() => {
+              onGenerate(item);
+            }}
             className="p-3 border rounded-full text-sm cursor-pointer text-gray-500 hover:text-white"
             key={index}
           >
@@ -70,7 +70,12 @@ function Hero() {
           </h2>
         ))}
       </div>
-      <SigninDialog openDialog={openDialog} closeDialog={(value) => {setOpenDialog(false)}}/>
+      <SigninDialog
+        openDialog={openDialog}
+        closeDialog={(value) => {
+          setOpenDialog(false);
+        }}
+      />
     </div>
   );
 }
