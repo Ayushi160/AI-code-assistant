@@ -83,10 +83,3 @@ pnpm run dev
 - **Pages**: Found in the `app` directory (follows Next.js App Router structure).
 
 For more information, refer to the [Next.js documentation](https://nextjs.org/docs).
-
-what 
-
-hak
-
-# bolt-new-clone
- 
