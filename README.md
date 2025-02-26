@@ -1,6 +1,6 @@
 # AI-code-assistant
 
-This repository contains the codebase for the **bolt-new-clone** project. The code is written using **Next.js** and utilizes standard open-source libraries.
+This repository contains the codebase for the **AI code assistant** project. The code is written using **Next.js** and utilizes standard open-source libraries.
 
 ## Table of Contents
 
